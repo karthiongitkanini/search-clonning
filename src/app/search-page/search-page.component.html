@@ -1,0 +1,134 @@
+<div class="imgbox">
+   <img id="HomePageBackground" src="../assets/Images/MinimalBG.png" title="Breeze Airways" alt="Flight Home Page"
+    height=auto>
+    
+<div style="height: 200px; width: 200px; position:absolute;top: 18%; left:50%; ">
+<img src="../assets/Images/globe.png" style="width:600px;height:600px;">
+ </div>
+</div>
+<div style="  position:absolute;top: 22%; left:8%; ">
+ <h4 style="padding-left: 4%; font-size: 25px;"><i>Don't just fly</i></h4>
+ <h1 style="font-size: 95px;">
+   <i>
+   FLY BETTER
+  </i>
+ </h1>
+ <h5 style="padding-left: 57%; font-size: 20px;">
+    with Breeze Airways 
+ </h5>
+</div>
+  
+
+<div class="form-group" id="SearchPage" [ngStyle]="{'background-image': getUrl()}">
+  <div class="boarding">
+    <label for="sel1">BOARDING FROM</label>
+    <select id="sel1" class="form-control" (change)="selectedSource($event)" required>
+        <option hidden>--select--</option>
+      <option value="{{p}}" *ngFor="let p of place">
+        {{p}}
+      </option> 
+    </select>
+  </div>
+
+  <div class="landing">
+
+    <label>LANDING IN</label>
+    <select class="form-control" id="sel2" (change)="selectedDestination($event)" required>
+      <option hidden>--select--</option>
+      <option value="{{p}}" *ngFor="let p of place">
+        {{p}}
+      </option>
+    </select>
+  </div>
+
+  <div class="boardingDate">
+    <!-- <input type="date" class="form-control" (change)="selectedDate($event)" /> -->
+    <p>
+      <label>BOARDING DATE</label>
+      <br />
+
+      <input required style="width: 280px; height: 50px;" type="date" [min]="minDate" [max]="maxDate" (change)="selectedDate($event)" id="boardingDate" class="form-control"
+        placeholder="Choose a date" />
+
+      <!-- <mat-form-field class="example-full-width">
+              <input matInput (change)="selectedDate($event)" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date">
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+            <button mat-mini-fab color="primary" (click)="picker.open()">pick</button> -->
+      </p>
+  </div>
+
+  <div class="break"><br/><br/><br/></div>
+
+
+  <div>
+      <br/><br/> 
+      <label>TRAVEL CLASS</label>
+      
+      <select style="width: 280px; height: 50px; padding-top:6%; padding-bottom: 2%;" class="form-control" id="travelClass" required>
+          <option selected hidden>--select class--</option>
+          <option>Economy</option>
+           <option>Business class</option>
+          <option>First class</option>
+         </select>  
+    </div>
+ 
+    <!-- <div style=" padding-top:2%;">
+        <br/><br/> 
+        <label>TRAVEL TYPE</label>
+        <br/>
+        <mat-checkbox color="primary" style="width: 280px; height: 50px; padding-top:8%;">ONE WAY</mat-checkbox>
+       </div> -->
+
+        
+    <div style=" padding-top:4%; padding-left: 0%;" id="passengers">
+         <label>PASSENGER COUNT</label>
+         <br/>
+            <input type="number" class="form-control" id="count" value="1" min="1" max="4">
+       </div>
+
+  <div class="searchFlightsButton">
+      <br/><br/> 
+    <button (click)="submit()" class="btnSearchFlights" id="btnSearchFlights">SEARCH FLIGHTS</button>
+  </div>
+
+  <div class="break"><br/><br/></div>
+  
+  <div style="font-size:22px; border-top-color: blueviolet;">
+    <div *ngIf="show">
+        <hr>
+              <h1 style="font-size:48px;font-weight: lighter; color: blueviolet;padding-left: 22%;">Flight's List</h1>
+              <br>
+              <br>
+              <br>
+       </div>
+        <p *ngFor="let f of flightshow">
+            <mat-card>
+                <mat-card-title>
+                    {{f.Flightid}}
+                  </mat-card-title><br>
+           {{f.Arrivaltime}}
+         <img src="../assets/Images/fromto.png" style="width: 200px; height: 90px;">   
+         &nbsp;  
+         {{f.Departuretime}}
+         &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <br>
+         <mat-card-title style="font-weight: lighter;position: relative; left:35%;">{{f.Duration}}</mat-card-title>
+         <br>
+         <mat-card-title>  {{f.Fare|currency:'INR'}}/-</mat-card-title>
+         <mat-card-subtitle>
+            *inclusive of all taxes
+          </mat-card-subtitle>
+          &nbsp;  
+         <br>
+        <a routerlink="displayAfterBooknow">
+          <button class="btnSearchFlights" id="btnSearchFlights" (click)="bookNow()">Book Now</button>
+       </a>
+      </mat-card>    
+          <br/><br/><br/>  
+      </p>
+  </div>
+</div>
+
+
+

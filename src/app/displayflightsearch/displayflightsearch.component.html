@@ -1,0 +1,68 @@
+ <button mat-raised-button (click)="openDialog()"> button</button>
+ <h1>
+   <br>
+   <br>
+    <br>
+     After book now
+ </h1>
+   
+  <div>
+      <mat-horizontal-stepper linear #stepper>
+              <mat-step [stepControl]="firstFormGroup">
+               <form [formGroup]="firstFormGroup">
+                  <ng-template matStepLabel>Fill out your name</ng-template>
+                  <mat-checkbox formControlName="firstCtrl" required>Hello</mat-checkbox>
+                   <div>
+                     <h1> Place the component tag here!!!<br/><h5>(-----make sure the checkbox is checked only then next button works----!!)</h5></h1>
+                  </div>
+                  <div style="padding-top: 6%;">
+                      <button  style="font-size: 25px;padding: 1% 2%" class="btn btn-success"  mat-button matStepperNext>Next</button>
+                </div>
+              </form>
+             </mat-step>  
+                   
+      
+          <mat-step [stepControl]="secondFormGroup">
+            <form [formGroup]="secondFormGroup">
+              <ng-template matStepLabel>Payment</ng-template>
+              hello 2
+              <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+                <button mat-button matStepperNext style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Next</button>
+              </div>
+            </form>
+          </mat-step>
+   
+          
+          <mat-step>
+            <ng-template matStepLabel>Preview and confirmation</ng-template>
+            You are about to be done.
+            <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+              <button mat-button matStepperNext style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Next</button>
+             </div>
+          </mat-step>
+      
+      
+      
+          <mat-step>
+              <ng-template matStepLabel>success</ng-template>
+              You are now done.
+              <div>
+                <button mat-button matStepperPrevious style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Back</button>&nbsp;&nbsp;
+                <button mat-button (click)="stepper.reset()" style="font-size: 25px;padding: 1% 2%" class="btn btn-success" >Reset</button>
+              </div>
+            </mat-step>
+      
+      
+      
+        </mat-horizontal-stepper>
+ 
+  </div>
+  
+
+
+ 
+
+
+ 

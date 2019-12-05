@@ -1,0 +1,107 @@
+option,select,label{
+    color:(rgb(34, 3, 48) 48);
+    font-size: large;
+    font-weight:350;    
+}
+select{
+    width:370px;
+}
+.form-group{ 
+    width:40%;
+    position: relative;
+    float: left;
+}
+body{
+    background-color: lightblue;
+}
+.mat-mini-fab{
+    background-color:blueviolet;
+    font-weight: lighter !important;
+ }
+ label{
+     color:blueviolet;
+ }
+ #sel1,#sel2,#travelClass,#oneway {
+   border: none;    
+   border-bottom: 1.2px solid blueviolet;
+   background: transparent;
+   outline: none;
+   color: #000;
+   font-size: 18px;
+   width: 280px; 
+   height: 50px;
+  }
+  #count{
+    border: none;    
+    border-bottom: 1.2px solid blueviolet;
+    background: transparent;
+    outline: none;
+    color: #000;
+    font-size: 18px;
+    width: 220px; 
+    height: 50px; 
+ }
+#boardingDate{
+    border: none;    
+    border-bottom: 1.2px solid blueviolet;
+    background: transparent;
+    outline: none;
+}
+ #SearchPage {
+    box-shadow: 5px 7px 13px dimgray;
+    width: 90%;
+    height: auto;
+    background: white;
+    position: absolute; 
+    top: 105%;
+    left: 50%; 
+    padding:0% 0% 3% 2% ;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    border-radius: 13px;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+.boardingDate,.boarding,.landing {
+    padding:16px;
+    padding-top: 9%;
+}
+ .btnSearchFlights{
+    padding-left:330px;
+    /* padding-top:-81px; */
+}
+#btnSearchFlights {
+   background: transparent;
+   background-color: transparent;
+   border: 1px solid blueviolet;
+   font-size: 25px;
+   font-weight: 90%;
+   font-family: Calibri;
+   color: blueviolet;
+   padding: 10px 25px;
+   border-radius: 0px;
+   transition: all .2s ease-in-out;
+ }
+.searchFlightsButton{
+    padding-left: 0.1%;
+    padding-bottom: 5%;
+    padding-top: 3%;
+}
+#btnSearchFlights:hover {
+    background: blueviolet;
+    color: white;
+    transform:scale(1.1);
+}   
+  #HomePageBackground {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    top: 0px;
+  }
+   
